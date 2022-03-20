@@ -9,6 +9,7 @@ public class UnitMovement : NetworkBehaviour
 {
     [SerializeField] private NavMeshAgent agent = null;
     [SerializeField] private Targeter targeter;
+    [SerializeField] private float chaseRange = 10f;
     private Camera mainCamera;
 
     #region Server
@@ -16,6 +17,21 @@ public class UnitMovement : NetworkBehaviour
     [ServerCallback]
     private void Update()
     {
+        Targetable target = targeter.GetTarget;
+        if(target != null)
+        {
+            if((target.transform.position - transform.position).sqrMagnitude > chaseRange * chaseRange)
+            {
+                agent.SetDestination(target.transform.position);
+            }
+            else if(agent.hasPath)
+            {
+                agent.ResetPath();
+            }
+
+            return;
+        }
+
         if(!agent.hasPath) { return; }
         if(agent.remainingDistance > agent.stoppingDistance) { return; }
 
