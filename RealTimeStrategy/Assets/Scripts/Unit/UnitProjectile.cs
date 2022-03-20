@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class UnitProjectile : NetworkBehaviour
 {
+    [SerializeField] private int damageToDeal = 20;
     [SerializeField] private Rigidbody rb = null;
     [SerializeField] private float destroyAfterSeconds = 5f;
     [SerializeField] private float launchForce = 10f;
@@ -12,6 +13,20 @@ public class UnitProjectile : NetworkBehaviour
     private void Start()
     {
         rb.velocity = transform.forward * launchForce;
+    }
+
+    [ServerCallback]
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent<NetworkIdentity>(out NetworkIdentity networkIdentity))
+        {
+            if(networkIdentity.connectionToClient == connectionToClient) { return; }
+        }
+
+        if(other.TryGetComponent<Health>(out Health health))
+        {
+            health.DealDamage(damageToDeal);
+        }
     }
 
     public override void OnStartServer()
