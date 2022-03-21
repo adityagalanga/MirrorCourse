@@ -26,6 +26,7 @@ public class UnitProjectile : NetworkBehaviour
         if(other.TryGetComponent<Health>(out Health health))
         {
             health.DealDamage(damageToDeal);
+            DestroySelf();
         }
     }
 

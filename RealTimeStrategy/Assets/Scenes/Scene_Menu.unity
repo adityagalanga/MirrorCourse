@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: offlineScene
       value: Assets/Scenes/Scene_Menu.unity
       objectReference: {fileID: 0}
+    - target: {fileID: 6270941971990363921, guid: 398fcb0d37ce19b4d8e56dfbaabbe702, type: 3}
+      propertyPath: gameOverHandlerPrefab
+      value: 
+      objectReference: {fileID: 7537121423520464347, guid: 7c5ef27df457e5c4594431bee4dfb862, type: 3}
     - target: {fileID: 6270941971990363921, guid: 398fcb0d37ce19b4d8e56dfbaabbe702, type: 3}
       propertyPath: spawnPrefabs.Array.size
       value: 3
