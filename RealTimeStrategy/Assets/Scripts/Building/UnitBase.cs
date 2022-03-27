@@ -8,6 +8,7 @@ public class UnitBase : NetworkBehaviour
 {
     [SerializeField]private Health health;
 
+    public static event Action<int> ServerOnPlayerDie;
     public static event Action<UnitBase> ServerOnBaseSpawnned;
     public static event Action<UnitBase> ServerOnBaseDespawnned;
 
@@ -28,6 +29,7 @@ public class UnitBase : NetworkBehaviour
     [Server]
     private void ServerHandleDie()
     {
+        ServerOnPlayerDie?.Invoke(connectionToClient.connectionId);
         NetworkServer.Destroy(gameObject);
     }
 
