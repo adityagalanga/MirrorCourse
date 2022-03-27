@@ -17,9 +17,9 @@ public class RTSNetworkManager : NetworkManager
         NetworkServer.Spawn(UnitSpawner, conn);
     }
 
-    public override void OnServerChangeScene(string newSceneName)
+    public override void OnServerSceneChanged(string newSceneName)
     {
-        if (SceneManager.GetActiveScene().name.StartsWith("Scene_Map"))
+        if (SceneManager.GetActiveScene().name.StartsWith("Scene_Map_"))
         {
             GameOverHandler gameOverHandler = Instantiate(gameOverHandlerPrefab);
             NetworkServer.Spawn(gameOverHandler.gameObject);

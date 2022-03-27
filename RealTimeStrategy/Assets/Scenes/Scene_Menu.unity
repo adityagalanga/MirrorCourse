@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -174,26 +174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6270941971990363921, guid: 398fcb0d37ce19b4d8e56dfbaabbe702, type: 3}
-      propertyPath: onlineScene
-      value: Assets/Scenes/Scene_Map_01.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 6270941971990363921, guid: 398fcb0d37ce19b4d8e56dfbaabbe702, type: 3}
-      propertyPath: offlineScene
-      value: Assets/Scenes/Scene_Menu.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 6270941971990363921, guid: 398fcb0d37ce19b4d8e56dfbaabbe702, type: 3}
-      propertyPath: gameOverHandlerPrefab
-      value: 
-      objectReference: {fileID: 7537121423520464347, guid: 7c5ef27df457e5c4594431bee4dfb862, type: 3}
-    - target: {fileID: 6270941971990363921, guid: 398fcb0d37ce19b4d8e56dfbaabbe702, type: 3}
-      propertyPath: spawnPrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6270941971990363921, guid: 398fcb0d37ce19b4d8e56dfbaabbe702, type: 3}
-      propertyPath: spawnPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 8008319937548021774, guid: 5087680932bda084ab9683052b9422b8, type: 3}
     - target: {fileID: 6270941971990363924, guid: 398fcb0d37ce19b4d8e56dfbaabbe702, type: 3}
       propertyPath: m_Name
       value: NetworkManager
