@@ -7,6 +7,11 @@ using UnityEngine;
 public class RTSPlayer : NetworkBehaviour
 {
     [SerializeField] private Building[] buildings = new Building[0];
+
+    [SyncVar(hook = nameof(ClientHandleResourcesUpdated))]
+    private int resources = 500;
+    public event Action<int> ClientOnResourcesUpdated;
+
     private List<Unit> MyUnit = new List<Unit>();
     private List<Building> myBuildings = new List<Building>();
     public List<Unit> GetMyUnits()
@@ -14,6 +19,12 @@ public class RTSPlayer : NetworkBehaviour
         return MyUnit;
     }
     public List<Building> GetMyBuildings() => myBuildings;
+    public int GetResources() => resources;
+
+    public void SetResources(int newResources)
+    {
+        resources = newResources;
+    }
 
     #region Server
     public override void OnStartAuthority()
@@ -97,6 +108,10 @@ public class RTSPlayer : NetworkBehaviour
         Building.AuthorityOnBuildingDespawned -= AuthorityHandlerBuildingDespawned;
     }
 
+    private void ClientHandleResourcesUpdated(int oldResources,int newResources)
+    {
+        ClientOnResourcesUpdated?.Invoke(newResources);
+    }
 
     private void AuthorityHandlerUnitSpawned(Unit obj)
     {
