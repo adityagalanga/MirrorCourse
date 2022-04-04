@@ -50,10 +50,10 @@ public class UnitSpawner : NetworkBehaviour, IPointerClickHandler
         NetworkServer.Spawn(unitInstance, connectionToClient);
 
         Vector3 spawnOffset = Random.insideUnitSphere * spawnMoveRange;
-        spawnOffset.y = unitSpawnPoint.position.y;
+        spawnOffset.y = 0;
 
         UnitMovement unitMovement = unitInstance.GetComponent<UnitMovement>();
-        unitMovement.ServerMove(unitSpawnPoint.position + spawnOffset);
+        unitMovement.CmdMove(unitSpawnPoint.position + spawnOffset);
 
         queueUnits--;
         unitTimer = 0f;
