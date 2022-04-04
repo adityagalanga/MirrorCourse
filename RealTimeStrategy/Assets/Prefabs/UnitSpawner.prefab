@@ -141,6 +141,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8304524838478024715, guid: 7d6cba7b187cd15469f7c2263f5ffffd, type: 3}
   m_PrefabInstance: {fileID: 3466234222671521553}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &2943108197313104105 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1784143325935185912, guid: 7d6cba7b187cd15469f7c2263f5ffffd, type: 3}
+  m_PrefabInstance: {fileID: 3466234222671521553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8012953668975098411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: -2413806693520163455, guid: 89d1b345e6f110649b6099bf1717bb31, type: 3}
     - target: {fileID: 339778768939501580, guid: ffcbba6b02ec5e34dafb7bde924ff685, type: 3}
       propertyPath: price
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 339778768939501580, guid: ffcbba6b02ec5e34dafb7bde924ff685, type: 3}
       propertyPath: buildingPreview
@@ -360,6 +365,14 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4690280549086620354, guid: ffcbba6b02ec5e34dafb7bde924ff685, type: 3}
+      propertyPath: colorRenderer.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690280549086620354, guid: ffcbba6b02ec5e34dafb7bde924ff685, type: 3}
+      propertyPath: colorRenderer.Array.data[0]
+      value: 
+      objectReference: {fileID: 2943108197313104105}
     - target: {fileID: 5293781862915296648, guid: ffcbba6b02ec5e34dafb7bde924ff685, type: 3}
       propertyPath: aimAtPoint
       value: 

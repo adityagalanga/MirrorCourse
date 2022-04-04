@@ -124,6 +124,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8083779065136176600, guid: 290dfe60e82ced84c8f151c5dd62a1a1, type: 3}
   m_PrefabInstance: {fileID: 4626836824710265585}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &3466234222671521579 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8083779065136176602, guid: 290dfe60e82ced84c8f151c5dd62a1a1, type: 3}
+  m_PrefabInstance: {fileID: 4626836824710265585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8539020176449856515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,6 +224,14 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4690280549086620354, guid: ffcbba6b02ec5e34dafb7bde924ff685, type: 3}
+      propertyPath: colorRenderer.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690280549086620354, guid: ffcbba6b02ec5e34dafb7bde924ff685, type: 3}
+      propertyPath: colorRenderer.Array.data[0]
+      value: 
+      objectReference: {fileID: 3466234222671521579}
     - target: {fileID: 5293781862915296648, guid: ffcbba6b02ec5e34dafb7bde924ff685, type: 3}
       propertyPath: aimAtPoint
       value: 

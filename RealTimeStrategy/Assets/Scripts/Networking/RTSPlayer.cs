@@ -14,19 +14,17 @@ public class RTSPlayer : NetworkBehaviour
     private int resources = 500;
     public event Action<int> ClientOnResourcesUpdated;
 
+    private Color teamColor = new Color();
     private List<Unit> MyUnit = new List<Unit>();
     private List<Building> myBuildings = new List<Building>();
+
+    public Color GetTeamColor() => teamColor;
     public List<Unit> GetMyUnits()
     {
         return MyUnit;
     }
     public List<Building> GetMyBuildings() => myBuildings;
     public int GetResources() => resources;
-
-    public void SetResources(int newResources)
-    {
-        resources = newResources;
-    }
 
     public bool CanPlaceBuilding(BoxCollider buildingCollider, Vector3 point)
     {
@@ -114,6 +112,20 @@ public class RTSPlayer : NetworkBehaviour
         if (building.connectionToClient.connectionId != connectionToClient.connectionId) { return; }
         myBuildings.Remove(building);
     }
+
+
+    [Server]
+    public void SetTeamColor(Color newTeamColor)
+    {
+        teamColor = newTeamColor;
+    }
+
+    [Server]
+    public void SetResources(int newResources)
+    {
+        resources = newResources;
+    }
+
     #endregion
 
 
