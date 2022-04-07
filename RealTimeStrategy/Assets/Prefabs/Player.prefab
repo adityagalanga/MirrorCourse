@@ -89,8 +89,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1281
   buildings:
-  - {fileID: 8230208913089506319, guid: bb62581707df47a479237c49aec01eb5, type: 3}
+  - {fileID: 2257204635745109932, guid: 07b467343154c8a41b987c61c20e03e4, type: 3}
   - {fileID: 8230208913089506319, guid: dd2347ba52622b649806ff9805d45951, type: 3}
+  - {fileID: 2257204635745109932, guid: 09928888e6248af468bde98dd8a7589b, type: 3}
   buildingRangeLimit: 5
 --- !u!1 &7956687978382611490
 GameObject:

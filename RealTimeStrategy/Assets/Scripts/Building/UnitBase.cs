@@ -20,7 +20,6 @@ public class UnitBase : NetworkBehaviour
     }
     public override void OnStopServer()
     {
-
         health.ServerOnDie -= ServerHandleDie;
         ServerOnBaseDespawnned?.Invoke(this);
     }
@@ -30,7 +29,7 @@ public class UnitBase : NetworkBehaviour
     private void ServerHandleDie()
     {
         ServerOnPlayerDie?.Invoke(connectionToClient.connectionId);
-        NetworkServer.Destroy(gameObject);
+        NetworkServer.Destroy(this.gameObject);
     }
 
     #endregion

@@ -42,11 +42,11 @@ public class ResourcesGenerator : NetworkBehaviour
 
     private void ServerHandleGameOver()
     {
-        NetworkServer.Destroy(gameObject);
+        enabled = false;
     }
 
     private void ServerHandleDie()
     {
-        enabled = false;
+        NetworkServer.Destroy(gameObject);
     }
 }

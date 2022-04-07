@@ -53,7 +53,7 @@ public class UnitSpawner : NetworkBehaviour, IPointerClickHandler
         spawnOffset.y = 0;
 
         UnitMovement unitMovement = unitInstance.GetComponent<UnitMovement>();
-        unitMovement.CmdMove(unitSpawnPoint.position + spawnOffset);
+        unitMovement.ServerMove(unitSpawnPoint.position + spawnOffset);
 
         queueUnits--;
         unitTimer = 0f;
