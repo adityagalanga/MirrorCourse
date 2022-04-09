@@ -15,13 +15,16 @@ public class RTSPlayer : NetworkBehaviour
     private int resources = 500;
     [SyncVar(hook = nameof(AuthorityHandlePartyOwnerStateUpdated))]
     private bool isPartyOwner = false;
-
+    [SyncVar (hook = nameof(ClientHandleNameDisplayUpdated))]
+    private string displayName;
     public event Action<int> ClientOnResourcesUpdated;
     public static event Action<bool> AuthorityOnPartyOwnerStateUpdated;
+    public static event Action ClientOnInfoUpdated;
 
     private Color teamColor = new Color();
     private List<Unit> MyUnit = new List<Unit>();
     private List<Building> myBuildings = new List<Building>();
+    public string GetDisplayName() => displayName;
     public bool GetIsPartyOwner() => isPartyOwner;
     public Transform GetCameraTransform() => cameraTransform;
     public Color GetTeamColor() => teamColor;
@@ -58,6 +61,8 @@ public class RTSPlayer : NetworkBehaviour
         Unit.ServerOnUnitDespawned += ServerHandlerUnitDespawned;
         Building.ServerOnBuildingSpawned += ServerHandlerBuildingSpawned;
         Building.ServerOnBuildingDespawned += ServerHandlerBuildingDespawned;
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public override void OnStopServer()
@@ -129,7 +134,11 @@ public class RTSPlayer : NetworkBehaviour
         if (building.connectionToClient.connectionId != connectionToClient.connectionId) { return; }
         myBuildings.Remove(building);
     }
-
+    [Server]
+    public void SetDisplayName(string displayName)
+    {
+        this.displayName = displayName;
+    }
 
     [Server]
     public void SetTeamColor(Color newTeamColor)
@@ -159,14 +168,14 @@ public class RTSPlayer : NetworkBehaviour
 
     public override void OnStartClient()
     {
-        Debug.Log("masuk");
         if (NetworkServer.active) { return; }
+        DontDestroyOnLoad(this.gameObject);
         ((RTSNetworkManager)NetworkManager.singleton).Players.Add(this);
     }
 
     public override void OnStopClient()
     {
-        Debug.Log("stop");
+        ClientOnInfoUpdated?.Invoke();
         if (!isClientOnly) { return; }
         ((RTSNetworkManager)NetworkManager.singleton).Players.Remove(this);
 
@@ -196,6 +205,11 @@ public class RTSPlayer : NetworkBehaviour
     private void AuthorityHandlerUnitDespawned(Unit obj)
     {
         MyUnit.Remove(obj);
+    }
+
+    private void ClientHandleNameDisplayUpdated(string oldDisplayName,string newDisplayName)
+    {
+        ClientOnInfoUpdated?.Invoke();
     }
 
     private void AuthorityHandlerBuildingSpawned(Building obj)

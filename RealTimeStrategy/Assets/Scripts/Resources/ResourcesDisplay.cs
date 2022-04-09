@@ -10,19 +10,11 @@ public class ResourcesDisplay : MonoBehaviour
     [SerializeField] private TMP_Text resourcesText = null;
 
     private RTSPlayer player;
-
-    private void Update()
+    private void Start()
     {
-        if (player == null)
-        {
-            player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();
-
-            if (player != null)
-            {
-                ClientHandlerResourceUpdate(player.GetResources());
-                player.ClientOnResourcesUpdated += ClientHandlerResourceUpdate;
-            }
-        }
+        player = NetworkClient.connection.identity.GetComponent<RTSPlayer>();
+        ClientHandlerResourceUpdate(player.GetResources());
+        player.ClientOnResourcesUpdated += ClientHandlerResourceUpdate;
     }
 
     private void OnDestroy()
