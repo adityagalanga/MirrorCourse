@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5343101615629538316}
   - component: {fileID: 3791459012825261608}
-  - component: {fileID: 8834488036245158575}
   - component: {fileID: 1091061687253336548}
+  - component: {fileID: 8834488036245158575}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -51,25 +51,6 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 0c6fb4f821993fd4fa137f2c4a786848
   hasSpawned: 0
---- !u!114 &8834488036245158575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7940838785840408071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff8d19a0a04b4c4d83213fe7a9509aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  playerCameraTransform: {fileID: 6778066697243359448}
-  speed: 25
-  screenBorderThickness: 10
-  screenXLimits: {x: -45, y: 45}
-  screenZLimits: {x: -55, y: 35}
 --- !u!114 &1091061687253336548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +74,25 @@ MonoBehaviour:
   - {fileID: 8230208913089506319, guid: dd2347ba52622b649806ff9805d45951, type: 3}
   - {fileID: 2257204635745109932, guid: 09928888e6248af468bde98dd8a7589b, type: 3}
   buildingRangeLimit: 5
+--- !u!114 &8834488036245158575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940838785840408071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff8d19a0a04b4c4d83213fe7a9509aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  playerCameraTransform: {fileID: 6778066697243359448}
+  speed: 25
+  screenBorderThickness: 10
+  screenXLimits: {x: -45, y: 45}
+  screenZLimits: {x: -55, y: 35}
 --- !u!1 &7956687978382611490
 GameObject:
   m_ObjectHideFlags: 0

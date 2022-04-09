@@ -52,7 +52,7 @@ MonoBehaviour:
   onlineScene: 
   transport: {fileID: 6270941971990363926}
   networkAddress: localhost
-  maxConnections: 100
+  maxConnections: 4
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 7940838785840408071, guid: 0c6fb4f821993fd4fa137f2c4a786848, type: 3}
   autoCreatePlayer: 1
@@ -67,7 +67,7 @@ MonoBehaviour:
   - {fileID: 421431125149100541, guid: 170df3fa56c1a8448a0d7e06bcbbb880, type: 3}
   - {fileID: 9152650852227141934, guid: 09928888e6248af468bde98dd8a7589b, type: 3}
   - {fileID: 870720424145193344, guid: e3a2d607e4d71ba46ab67000a944c782, type: 3}
-  unitSpawnerPrefab: {fileID: 1324093180633365133, guid: 3f60f296475535448945e9531e1a088e, type: 3}
+  unitBasePrefab: {fileID: 1324093180633365133, guid: 3f60f296475535448945e9531e1a088e, type: 3}
   gameOverHandlerPrefab: {fileID: 7537121423520464347, guid: 7c5ef27df457e5c4594431bee4dfb862, type: 3}
 --- !u!114 &6270941971990363926
 MonoBehaviour:
